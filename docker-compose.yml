@@ -1,0 +1,7 @@
+app:
+  image: ibmcom/swift-ubuntu
+  ports:
+    - "8090:8090"
+  volumes:
+    - .:/root/swift-server-skeleton
+  command: bash -c "cd /root/swift-server-skeleton && swift build --clean && swift build && ./.build/debug/swift-server-skeleton"
